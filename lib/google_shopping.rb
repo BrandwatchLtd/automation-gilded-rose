@@ -14,11 +14,11 @@ class GoogleShopping
 
   def click_on_books_category
     find('span[title=Books]').click
-    sleep(2)
+    sleep 2
   end
 
   def verify_shopping(string)
-    elements = all('div.pslline')
+    elements = all 'div.pslline'
     case "string"
     when 'ocado'
       elements.each do |element|
