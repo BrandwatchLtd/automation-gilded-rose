@@ -10,9 +10,15 @@ class GoogleShopping
     end
   end
 
+  def search(product_name)
+    fill_in 'q', with: product_name
+    page.find('#gbqfb').click
+    sleep 1
+  end
+
   def verify_search(string)
     within 'div.sh-pr__product-results' do
-      result = first'div.psli h3'
+      result = first 'div.psli h3'
       if result.text.slice(string).nil?
         fail
       end

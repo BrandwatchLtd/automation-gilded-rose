@@ -2,14 +2,12 @@ Given /^I am on the google shopping page$/ do
   @shopping_page = GoogleShopping.new
 end
 
-And /^I search for "([^"]*)"$/ do |arg|
-  fill_in 'q', with: arg
-  page.find('#gbqfb').click
-  sleep 1
+And /^I search for "([^"]*)"$/ do |product|
+  @shopping_page.search product
 end
 
-Then /^I get "([^"]*)" results$/ do |arg|
-  @shopping_page.verify_search arg
+Then /^I get "([^"]*)" results$/ do |product|
+  @shopping_page.verify_search product
 end
 
 When /^I click on up to £15$/ do
