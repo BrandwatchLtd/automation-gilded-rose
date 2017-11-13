@@ -16,10 +16,10 @@ class GoogleShopping
     sleep 1
   end
 
-  def verify_search(string)
+  def verify_search(product_name)
     within 'div.sh-pr__product-results' do
-      result = first 'div.psli h3'
-      if result.text.slice(string).nil?
+      result = first('div.psli h3').text.downcase
+      if !result.include? product_name.downcase
         fail
       end
     end
