@@ -1,5 +1,8 @@
 Given /^I am on the google shopping page$/ do
   visit 'https://www.google.co.uk/shopping'
+  if !page.has_title? 'Google Shopping'
+      fail
+  end
 end
 
 And /^I search for "([^"]*)"$/ do |arg|
