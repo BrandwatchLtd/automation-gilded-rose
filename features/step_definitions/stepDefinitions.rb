@@ -24,11 +24,11 @@ Then /^None of the results are more that £15$/ do
 end
 
 When /^I click on books$/ do
-  @page.click_on_books_category
+  @shopping_page.click_on_books_category
 end
 
-Then /^the results are all books$/ do
-  search = find 'div._Gwj.std'
+Then /^the result category is books$/ do
+  search = @shopping_page.get_category
   if search.text != 'Books'
     fail
   end

@@ -12,10 +12,10 @@ Feature: Google shopping filters
 
   Scenario: I can find only books
     Given I am on the google shopping page
-    And I search for "Marmite"
-    Then I get "Marmite" results
+    And I search for "Marmite books"
+    Then I get "Book of Marmite" results
     When I click on books
-    Then the results are all books
+    Then the result category is books
 
   Scenario: I can find products sold by Tesco
     Given I am on the google shopping page
