@@ -3,6 +3,13 @@ require 'capybara/dsl'
 class GoogleShopping
   include Capybara::DSL
 
+  def initialize
+    visit 'https://www.google.co.uk/shopping'
+    if !page.has_title? 'Google Shopping'
+      fail
+    end
+  end
+
   def verify_search(string)
     within 'div.sh-pr__product-results' do
       result = first'div.psli h3'

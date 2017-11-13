@@ -1,8 +1,5 @@
 Given /^I am on the google shopping page$/ do
-  visit 'https://www.google.co.uk/shopping'
-  if !page.has_title? 'Google Shopping'
-      fail
-  end
+  @shopping_page = GoogleShopping.new
 end
 
 And /^I search for "([^"]*)"$/ do |arg|
@@ -12,8 +9,7 @@ And /^I search for "([^"]*)"$/ do |arg|
 end
 
 Then /^I get "([^"]*)" results$/ do |arg|
-  @page = GoogleShopping.new
-  @page.verify_search arg
+  @shopping_page.verify_search arg
 end
 
 When /^I click on up to £15$/ do
