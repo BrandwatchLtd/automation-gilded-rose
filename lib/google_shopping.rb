@@ -25,6 +25,11 @@ class GoogleShopping
     end
   end
 
+  def click_up_to_15_pounds
+    find('span', :text => 'Up to £15').click
+    sleep 2
+  end
+
   def click_on_books_category
     find('span[title=Books]').click
     sleep 2

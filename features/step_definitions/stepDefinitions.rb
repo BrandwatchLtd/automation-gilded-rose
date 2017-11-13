@@ -11,8 +11,7 @@ Then /^I get "([^"]*)" results$/ do |product|
 end
 
 When /^I click on up to £15$/ do
-  find('span', :text => 'Up to £15').click
-  sleep 2
+  @shopping_page.click_up_to_15_pounds
 end
 
 Then /^None of the results are more that £15$/ do
