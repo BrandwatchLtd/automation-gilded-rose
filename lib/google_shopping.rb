@@ -25,6 +25,10 @@ class GoogleShopping
     end
   end
 
+  def get_prices
+    all 'span.price'
+  end
+
   def click_up_to_15_pounds
     find('span', :text => 'Up to £15').click
     sleep 2

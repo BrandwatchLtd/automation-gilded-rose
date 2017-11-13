@@ -15,9 +15,8 @@ When /^I click on up to £15$/ do
 end
 
 Then /^None of the results are more that £15$/ do
-  elements = all 'span.price'
-  prices = elements.map { |e| e.text.sub('£', '').to_i }
-  prices.each do |price|
+  prices = @shopping_page.get_prices.each do |price|
+    price = price.text.sub('£', '').to_i
     if price > 15
       fail
     end
