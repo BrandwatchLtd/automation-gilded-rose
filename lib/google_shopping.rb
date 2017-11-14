@@ -97,4 +97,17 @@ class GoogleShopping
       end
     end
   end
+
+  # Check the price of every product falls in an inclusive range
+  #
+  # @param minimum_price [Numeric] Minimum allowable price
+  # @param maximum_price [Numeric] Maximum allowable price
+  def prices_in_range(minimum_price, maximum_price)
+    all('.price').each do |element|
+      price = element.text.sub('£', '').to_f
+      unless price.between? minimum_price, maximum_price
+        fail
+      end
+    end
+  end
 end
