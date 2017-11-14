@@ -33,6 +33,25 @@ class GoogleShopping
     find 'div._Gwj.std'
   end
 
+  # Find the div element for one of the filer groups in the left column
+  # of the page.
+  #
+  # Example colums are Price, Seller, Show price.
+  def get_filter_group_by_title(title)
+    titles = find_all '.sr__title'
+    correct_title = titles.detect {|e| e.text == title}
+    # Find the parent group of the correct title
+    correct_title.find(:xpath, '..')
+  end
+
+  # Click on a filter group item to activate that filter
+  def click_filter_group_entry(entry, group)
+    group = get_filter_group_by_title(group)
+    entry_link = group.find_all('a').detect {|e| e.text == entry}
+    entry_link.click
+    sleep 2
+  end
+
   def click_up_to_15_pounds
     find('span', :text => 'Up to £15').click
     sleep 2

@@ -21,7 +21,7 @@ Feature: Google shopping filters
     Given I am on the google shopping page
     And I search for "Marmite"
     Then I get "Marmite" results
-    When I click on Ocado
+    When I click on the seller "Tesco Grocery"
     Then the results are for Ocado
 
   Scenario: I can find products sold by Eat big

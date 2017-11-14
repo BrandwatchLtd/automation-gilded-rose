@@ -34,9 +34,8 @@ Then /^the result category is books$/ do
   end
 end
 
-When /^I click on Ocado$/ do
-  find(:xpath, '//*[@id="leftnavc"]/div/div[5]/div[2]/div[4]/a').click
-  sleep 2
+When /^I click on the seller "(.+)"$/ do |seller|
+  @shopping_page.click_filter_group_entry seller, 'Seller'
 end
 
 Then /^the results are for Ocado$/ do
