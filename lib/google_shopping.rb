@@ -1,5 +1,7 @@
 require 'capybara/dsl'
 
+SLEEP_PERIOD = 2
+
 class GoogleShopping
   include Capybara::DSL
 
@@ -13,7 +15,7 @@ class GoogleShopping
   def search(product_name)
     fill_in 'q', with: product_name
     page.find('#gbqfb').click
-    sleep 1
+    sleep SLEEP_PERIOD
   end
 
   def verify_search(product_name)
@@ -49,7 +51,7 @@ class GoogleShopping
     group = get_filter_group_by_title(group)
     entry_link = group.find_all('a').detect {|e| e.text == entry}
     entry_link.click
-    sleep 2
+    sleep SLEEP_PERIOD
   end
 
   def click_more(group='Seller')
@@ -58,12 +60,12 @@ class GoogleShopping
 
   def click_up_to_15_pounds
     find('span', :text => 'Up to £15').click
-    sleep 2
+    sleep SLEEP_PERIOD
   end
 
   def click_on_books_category
     find('span[title=Books]').click
-    sleep 2
+    sleep SLEEP_PERIOD
   end
 
   def verify_shopping(string)
