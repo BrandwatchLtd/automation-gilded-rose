@@ -52,6 +52,10 @@ class GoogleShopping
     sleep 2
   end
 
+  def click_more(group='Seller')
+    get_filter_group_by_title(group).find('div.sr__link', :text => 'More').click
+  end
+
   def click_up_to_15_pounds
     find('span', :text => 'Up to £15').click
     sleep 2

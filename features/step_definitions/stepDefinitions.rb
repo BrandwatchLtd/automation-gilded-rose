@@ -43,7 +43,7 @@ Then /^the results are for Ocado$/ do
 end
 
 When /^I click more$/ do
-  pending
+  @shopping_page.click_more
 end
 
 And /^I click on Eat big$/ do
