@@ -55,7 +55,9 @@ class GoogleShopping
   end
 
   def click_more(group='Seller')
-    get_filter_group_by_title(group).find('div.sr__link', :text => 'More').click
+    get_filter_group_by_title(group)
+      .find('div.sr__link', :text => 'More')
+      .click
   end
 
   def custom_price_range(price)
