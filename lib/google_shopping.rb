@@ -41,7 +41,7 @@ class GoogleShopping
   # Example colums are Price, Seller, Show price.
   def get_filter_group_by_title(title)
     titles = find_all '.sr__title'
-    correct_title = titles.detect {|e| e.text == title}
+    correct_title = titles.detect {|e| e.has_text? title}
     # Find the parent group of the correct title
     correct_title.find(:xpath, '..')
   end
@@ -92,7 +92,7 @@ class GoogleShopping
       element.click
       # Get the text from the 'from' line in the info pane and check
       # it's right.
-      unless find('span._-dv').text.downcase == seller.downcase
+      unless find('span._-dw').text.downcase == seller.downcase
         fail
       end
     end
