@@ -58,6 +58,18 @@ class GoogleShopping
     get_filter_group_by_title(group).find('div.sr__link', :text => 'More').click
   end
 
+  def custom_price_range(price)
+    # Find field?
+    within 'form.sr__price-range' do
+      if find_field(name: 'lower').value.empty?
+        name = 'lower'
+      else
+        name = 'upper'
+      end
+      fill_in(:name => name, :with => price)
+    end
+  end
+
   def click_up_to_15_pounds
     find('span', :text => 'Up to £15').click
     sleep SLEEP_PERIOD

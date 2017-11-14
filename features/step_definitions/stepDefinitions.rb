@@ -46,12 +46,8 @@ When /^I click more$/ do
   @shopping_page.click_more
 end
 
-When /^I enter £20$/ do
-  pending
-end
-
-And /^I enter £30$/ do
-  pending
+When /^I enter £(\d+)$/ do |price|
+  @shopping_page.custom_price_range(price)
 end
 
 And /^I click go$/ do
