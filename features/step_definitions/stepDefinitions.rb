@@ -39,7 +39,7 @@ When /^I click on the seller "(.+)"$/ do |seller|
 end
 
 Then /^the results are for Ocado$/ do
-  @page.verify_shopping 'Ocado'
+  @shopping_page.verify_shopping 'Ocado'
 end
 
 When /^I click more$/ do
