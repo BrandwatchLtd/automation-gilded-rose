@@ -38,20 +38,12 @@ When /^I click on the seller "(.+)"$/ do |seller|
   @shopping_page.click_filter_group_entry seller, 'Seller'
 end
 
-Then /^the results are for Ocado$/ do
-  @shopping_page.verify_shopping 'Ocado'
+Then /^the results are for "(.+)"$/ do |seller|
+  @shopping_page.verify_shopping seller
 end
 
 When /^I click more$/ do
   @shopping_page.click_more
-end
-
-And /^I click on Eat big$/ do
-  pending
-end
-
-Then /^the results are for Eat big$/ do
-  pending
 end
 
 When /^I enter £20$/ do
