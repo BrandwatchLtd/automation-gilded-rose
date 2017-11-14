@@ -51,7 +51,7 @@ When /^I enter £(\d+)$/ do |price|
 end
 
 And /^I click go$/ do
-  pending
+  @shopping_page.click_go_on_custom_price_range
 end
 
 Then /^the results are all between £20 and £30$/ do |arg|
