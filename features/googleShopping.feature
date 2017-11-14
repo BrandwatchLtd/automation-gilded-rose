@@ -24,13 +24,13 @@ Feature: Google shopping filters
     When I click on the seller "Tesco Grocery"
     Then the results are for "Tesco Grocery"
 
-  Scenario: I can find products sold by Eat big
+  Scenario: I can find products sold by The Healthery
     Given I am on the google shopping page
     And I search for "Marmite"
     Then I get "Marmite" results
     When I click more
-    And I click on the seller "Eat big"
-    Then the results are for "Eat big"
+    And I click on the seller "The Healthery"
+    Then the results are for "The Healthery"
 
   Scenario: I can find products between £20 and £30
     Given I am on the google shopping page
