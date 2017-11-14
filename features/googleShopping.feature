@@ -22,7 +22,7 @@ Feature: Google shopping filters
     And I search for "Marmite"
     Then I get "Marmite" results
     When I click on the seller "Tesco Grocery"
-    Then the results are for Ocado
+    Then the results are for "Tesco Grocery"
 
   Scenario: I can find products sold by Eat big
     Given I am on the google shopping page
@@ -30,7 +30,7 @@ Feature: Google shopping filters
     Then I get "Marmite" results
     When I click more
     And I click on the seller "Eat big"
-    Then the results are for Eat big
+    Then the results are for "Eat big"
 
   Scenario: I can find products between £20 and £30
     Given I am on the google shopping page

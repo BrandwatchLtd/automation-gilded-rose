@@ -68,14 +68,15 @@ class GoogleShopping
     sleep SLEEP_PERIOD
   end
 
-  def verify_shopping(string)
-    elements = all 'div.pslline'
-    case "string"
-    when 'ocado'
-      elements.each do |element|
-        unless element.text =~ /Ocado/
-          fail
-        end
+  # Click each result to see the given supplier for the result
+  def verify_shopping(seller)
+    # For each result click the title link to see more info.
+    all('a.pstl').each do |element|
+      element.click
+      # Get the text from the 'from' line in the info pane and check
+      # it's right.
+      unless find('span._-dv').text.downcase == seller.downcase
+        fail
       end
     end
   end
