@@ -29,7 +29,7 @@ Feature: Google shopping filters
     And I search for "Marmite"
     Then I get "Marmite" results
     When I click more
-    And I click on Eat big
+    And I click on the seller "Eat big"
     Then the results are for Eat big
 
   Scenario: I can find products between £20 and £30
