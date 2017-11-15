@@ -7,3 +7,5 @@ group :production do
   gem 'capybara', '~> 2.14'
   gem 'selenium-webdriver', '~> 3.4'
 end
+
+gem "yard", "~> 0.9.9", :group => [:doc]
